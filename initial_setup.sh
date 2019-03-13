@@ -48,15 +48,15 @@ download_if_not_exists "http://tti-coin.jp/data/yoneda/fever/base+sampling2+evsc
 download_if_not_exists "http://tti-coin.jp/data/yoneda/fever/data.zip" "/tmp/data.zip"
 unzip /tmp/data.zip
 
-if [ ! -d fever/data/wiki-pages/wiki-pages ]; then
-    mkdir fever/data/wiki-pages
-    unzip /tmp/wiki-pages.zip -d fever/data/wiki-pages
+if [ ! -d /content/fever/data/wiki-pages/wiki-pages ]; then
+    mkdir /content/fever/data/wiki-pages
+    unzip /tmp/wiki-pages.zip -d /content/fever/data/wiki-pages
     rm /tmp/wiki-pages.zip
 fi
 
-if [ ! -d fever/results/base+sampling2+evscores+rerank+train+dev+test-shared_test.ver0727_newaggr_submission ]; then
-    unzip /tmp/base+sampling2+evscores+rerank+train+dev+test-shared_test.ver0727_newaggr_submission.zip -d fever/results
+if [ ! -d /content/fever/results/base+sampling2+evscores+rerank+train+dev+test-shared_test.ver0727_newaggr_submission ]; then
+    unzip /tmp/base+sampling2+evscores+rerank+train+dev+test-shared_test.ver0727_newaggr_submission.zip -d /content/fever/results
 fi
 
 
-setup.sh  #Done manually in colab
+#setup.sh  #Done manually in colab
