@@ -7,6 +7,7 @@ CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 pushd . > /dev/null
 # clone takuma-ynd/jack.git
 cd ${THIS_FILE_PATH}/../
+cd /content/
 git clone https://github.com/takuma-ynd/jack.git
 # cd jack
 # This part can fail depending on the python environment. -> better to manually run this.
@@ -55,4 +56,4 @@ if [ ! -d results/base+sampling2+evscores+rerank+train+dev+test-shared_test.ver0
 fi
 
 
-bash setup.sh
+setup.sh  #Done manually in colab
