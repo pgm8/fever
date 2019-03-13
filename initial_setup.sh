@@ -22,6 +22,7 @@ popd > /dev/null
 
 pushd . > /dev/null
 cd ${THIS_FILE_PATH}/../
+cd /content/
 git clone https://github.com/takuma-ynd/fever-baselines.git
 popd > /dev/null
 
