@@ -8,7 +8,7 @@ pushd . > /dev/null
 # clone takuma-ynd/jack.git
 cd ${THIS_FILE_PATH}/../
 cd /content/
-git clone https://github.com/takuma-ynd/jack.git
+git clone https://github.com/capimx/jack.git
 # cd jack
 # This part can fail depending on the python environment. -> better to manually run this.
 # # if "python3" command is available, use that.
