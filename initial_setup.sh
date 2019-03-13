@@ -26,6 +26,8 @@ cd /content/
 git clone https://github.com/takuma-ynd/fever-baselines.git
 popd > /dev/null
 
+cd /content/fever
+
 mkdir data
 mkdir results
 
@@ -46,14 +48,14 @@ download_if_not_exists "http://tti-coin.jp/data/yoneda/fever/base+sampling2+evsc
 download_if_not_exists "http://tti-coin.jp/data/yoneda/fever/data.zip" "/tmp/data.zip"
 unzip /tmp/data.zip
 
-if [ ! -d data/wiki-pages/wiki-pages ]; then
-    mkdir data/wiki-pages
-    unzip /tmp/wiki-pages.zip -d data/wiki-pages
+if [ ! -d fever/data/wiki-pages/wiki-pages ]; then
+    mkdir fever/data/wiki-pages
+    unzip /tmp/wiki-pages.zip -d fever/data/wiki-pages
     rm /tmp/wiki-pages.zip
 fi
 
-if [ ! -d results/base+sampling2+evscores+rerank+train+dev+test-shared_test.ver0727_newaggr_submission ]; then
-    unzip /tmp/base+sampling2+evscores+rerank+train+dev+test-shared_test.ver0727_newaggr_submission.zip -d results
+if [ ! -d fever/results/base+sampling2+evscores+rerank+train+dev+test-shared_test.ver0727_newaggr_submission ]; then
+    unzip /tmp/base+sampling2+evscores+rerank+train+dev+test-shared_test.ver0727_newaggr_submission.zip -d fever/results
 fi
 
 
