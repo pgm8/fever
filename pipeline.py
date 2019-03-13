@@ -260,7 +260,7 @@ if __name__ == '__main__':
     if "__variables" not in config:
         config["__variables"] = {}
     config["__variables"]["___model_name___"] = args.model
-    model_dir = "/content/results/{}".format(config["__variables"]["___model_name___"])
+    model_dir = "/content/fever/results/{}".format(config["__variables"]["___model_name___"])
 
     if not os.path.exists(model_dir):
         os.mkdir(model_dir)
