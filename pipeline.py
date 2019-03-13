@@ -11,7 +11,7 @@ from config_parser import parse
 from fever_io import read_jsonl, save_jsonl
 
 
-root_dir = "**BASE_DIR**"
+root_dir = "/content/"
 @contextmanager
 def environ(env):
     original_environ_dict = os.environ.copy()
