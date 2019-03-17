@@ -116,7 +116,7 @@ def predict(reader, all_settings, batch_size):
     # pointer loops from 0 to less than (or equal to) len(all_settings) with step batch_size
     preds_list = list()
     print("Batch size: ",batch_size)
-    break
+    
     for pointer in tqdm(range(0, len(all_settings), batch_size)):
         batch_settings = all_settings[pointer: pointer + batch_size]
         n_settings = [len(settings_) for settings_ in batch_settings]
