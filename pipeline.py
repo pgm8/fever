@@ -107,6 +107,7 @@ def inference_rte(config):
     # train data
     if not os.path.exists(config["train_predicted_labels_and_scores_file"]):
         script = ["../fever/jack_reader.py"] + options
+        print("pl train", options)
         __run_python(script, gpu=True, env={"PYTHONPATH": "."})
     else:
         logger.info("skipping inference rte for train. %s exists", config["train_predicted_labels_and_scores_file"])
@@ -116,6 +117,7 @@ def inference_rte(config):
         options[0] = config["dev_input_file"]
         options[1] = config["dev_predicted_labels_and_scores_file"]
         script = ["../fever/jack_reader.py"] + options
+        print("pl dev", options)
         __run_python(script, gpu=True, env={"PYTHONPATH": "."})
     else:
         logger.info("skipping inference rte for dev. %s exists", config["dev_predicted_labels_and_scores_file"])
@@ -125,6 +127,8 @@ def inference_rte(config):
         options[0] = config["test_input_file"]
         options[1] = config["test_predicted_labels_and_scores_file"]
         script = ["../fever/jack_reader.py"] + options
+        print("pl test", options)
+
         __run_python(script, gpu=True, env={"PYTHONPATH": "."})
     else:
         logger.info("skipping inference rte for test. %s exists", config["test_predicted_labels_and_scores_file"])

@@ -115,6 +115,8 @@ def flatten(bumpy_2d_list):
 def predict(reader, all_settings, batch_size):
     # pointer loops from 0 to less than (or equal to) len(all_settings) with step batch_size
     preds_list = list()
+    print("Batch size: ",batch_size)
+    break
     for pointer in tqdm(range(0, len(all_settings), batch_size)):
         batch_settings = all_settings[pointer: pointer + batch_size]
         n_settings = [len(settings_) for settings_ in batch_settings]
@@ -185,7 +187,8 @@ if __name__ == "__main__":
     preds_length = list()
     all_settings = list()
     instances = read_ir_result(args.in_file, n_sentences=args.n_sentences, prependlinum=args.prependlinum, prependtitle=args.prependtitle, concatev=args.concatev)
-
+    print("In file 1:", args.in_file)
+    
     for instance in instances:
         evidence_list = instance["evidence"]
         claim = instance["claim"]
